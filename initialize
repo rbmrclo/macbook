@@ -48,17 +48,6 @@ install_asdf_plugin() {
   fi
 }
 
-echo "Configuring asdf version manager..."
-if [ ! -d "$HOME/.asdf" ]; then
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.3.0
-  append_to_zshrc "source $HOME/.asdf/asdf.sh" 1
-fi
-
-source "$HOME/.asdf/asdf.sh"
-install_asdf_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
-install_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
-install_asdf_plugin "elixir" "https://github.com/asdf-vm/asdf-elixir"
-
 install_asdf_language() {
   local language="$1"
   local version
@@ -78,6 +67,18 @@ gem_install_or_update() {
   fi
 }
 
+echo "Configuring asdf version manager..."
+if [ ! -d "$HOME/.asdf" ]; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.3.0
+  append_to_zshrc "source $HOME/.asdf/asdf.sh" 1
+fi
+
+source "$HOME/.asdf/asdf.sh"
+install_asdf_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
+install_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
+install_asdf_plugin "erlang" "https://github.com/asdf-vm/asdf-erlang"
+install_asdf_plugin "elixir" "https://github.com/asdf-vm/asdf-elixir"
+
 echo "Install latest Ruby..."
 install_asdf_language "ruby"
 gem update --system
@@ -89,7 +90,10 @@ echo "Installing latest Node..."
 bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
 install_asdf_language "nodejs"
 
+echo "Installing latest Erlang..."
+install_asdf_language "erlang"
+
 echo "Installing latest Elixir..."
 install_asdf_language "elixir"
 
-zsh # reboot zsh
+zsh # reboot
