@@ -4,7 +4,6 @@ tap "homebrew/services"
 tap "eqnxio/ngrok"
 tap "caskroom/cask"
 
-brew "curl"
 brew "git"
 brew "openssl"
 brew "the_silver_searcher"
