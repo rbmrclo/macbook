@@ -4,6 +4,9 @@ Inject steroids to a newly bought macbook and transform it into a dev machine.
 
 ## Setup
 
+Note to self: Prepare some popcorns and a good netflix movie because it'll
+surely take a lot of hours to finish the setup.
+
 ```
 $ curl --remote-name https://raw.githubusercontent.com/rbmrclo/macbook/master/initialize
 $ curl --remote-name https://raw.githubusercontent.com/rbmrclo/macbook/master/Brewfile
