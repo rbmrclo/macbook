@@ -1,6 +1,6 @@
 # Macbook
 
-Injecting steroids to a newly bought macbook and transform it into a dev machine.
+Inject steroids to a newly bought macbook and transform it into a dev machine.
 
 ## Setup
 
@@ -14,7 +14,9 @@ $ ./initialize
 
 - Configure SSH keys with github
 - Setup iTerm profile
+- Set `ZSH_THEME` in `~/.zshrc`
 - Setup repositories in github desktop
+- Login heroku
 
 ## Inspired by
 
